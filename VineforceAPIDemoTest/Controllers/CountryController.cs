@@ -38,7 +38,7 @@ namespace VineforceAPIDemoTest.Controllers
         public async Task<ActionResult<Country>> CreateCountry([FromBody] CreateCountryDto country)
         {
             var result = await _countryRepository.AddCountryAsync(country);
-            return CreatedAtAction(nameof(GetCountry), new { id = result.Id }, result);
+            return Ok(result);
         }
 
         [HttpPut("{id}")]
